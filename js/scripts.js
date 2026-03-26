@@ -186,9 +186,35 @@
 		    anchors: ['page1', 'page1-2', 'page3', 'page4-2', 'page-blank-methodology', 'page4', 'page6', 'page-methodology'],
 		    afterLoad: function(anchorLink, index){
 	           navbarFullpage();
-	            
   			}
 		});
+
+		// Metodologia 3W — injetar overlay diretamente na seção após pagepiling inicializar
+		(function injectMethodologyOverlay() {
+			var $section = $('[data-anchor="page-blank-methodology"]');
+			if ($section.length === 0) return;
+			// Remover injeções anteriores
+			$section.find('.meto-overlay-title, .meto-overlay-citation').remove();
+			// Título
+			$section.append(
+				'<div class="meto-overlay-title" style="' +
+				'position:absolute;top:36px;left:80px;z-index:9999;' +
+				'pointer-events:none;">' +
+				'<h2 style="color:#ffffff;font-size:2.4rem;font-weight:700;' +
+				'margin:0;text-shadow:0 2px 10px rgba(0,0,0,0.95);' +
+				'font-family:Montserrat,sans-serif;">' +
+				'Metodologia 3W</h2></div>'
+			);
+			// Citation
+			$section.append(
+				'<div class="meto-overlay-citation" style="' +
+				'position:absolute;bottom:28px;left:80px;z-index:9999;' +
+				'pointer-events:none;">' +
+				'<p style="color:rgba(255,255,255,0.7);font-size:0.7rem;' +
+				'font-style:italic;margin:0;font-family:Montserrat,sans-serif;">' +
+				'Citation: The Business Case for HR Excellence, SHRM, 2025</p></div>'
+			);
+		})();
 
      }
 
