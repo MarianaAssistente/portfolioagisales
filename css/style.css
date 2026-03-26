@@ -2187,3 +2187,29 @@ body.is-offline::after {
     letter-spacing: 1px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
+/* Metodologia 3W overlay */
+.section-blank-methodology {
+  position: relative !important;
+}
+.section-blank-methodology .section-bg {
+  z-index: 0;
+}
+.section-blank-methodology .scroll-wrap {
+  position: relative !important;
+  z-index: 2 !important;
+}
+.methodology-overlay-title,
+.methodology-overlay-citation {
+  position: absolute !important;
+  z-index: 999 !important;
+  pointer-events: none;
+}
+.methodology-overlay-title {
+  top: 40px;
+  left: 80px;
+}
+.methodology-overlay-citation {
+  bottom: 30px;
+  left: 80px;
+}
